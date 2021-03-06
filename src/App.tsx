@@ -1,9 +1,8 @@
 import React from 'react';
-import {} from 'redux-thunk'
-
+import css from './style.module.css'
 function App() {
   return (
-    <div>
+    <div className={css.redButton}>
       This is the main file of the app
     </div>
   );
