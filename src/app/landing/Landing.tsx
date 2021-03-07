@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Landing.module.css'
-import splash from '../../assets/splash2.jpg'
+import splash from '../../assets/splash.jpg'
 import Button from '@material-ui/core/Button'
 interface LandingProps {
 
