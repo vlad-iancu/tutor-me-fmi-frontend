@@ -1,10 +1,15 @@
 import React from 'react';
-import css from './style.module.css'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Landing from './app/landing/Landing';
 function App() {
   return (
-    <div className={css.redButton}>
-      This is the main file of the app
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" >
+          <Landing />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
