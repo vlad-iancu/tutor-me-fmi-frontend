@@ -15,21 +15,19 @@ export default function Landing(props: LandingProps) {
                 <p className={style.descriptionText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue lorem vel nunc condimentum suscipit. Mauris non orci eu orci eleifend sodales. Etiam sit amet odio eget libero mattis viverra. Integer nec urna vestibulum, venenatis lectus sit amet, sollicitudin nisl. Maecenas dapibus</p>
                 <div className={style.buttonContainer}>
                     <Button variant="contained"
-                    size="large"
+                        size="large"
                         className={style.landingButton}
-                        style={{ ...landingButtonStyle, backgroundColor: "white", color: "black" }}>
+                        style={{ ...landingButtonStyle, backgroundColor: "white", color: "black", borderColor: "black" }}>
                         Sign In
                     </Button>
                     <Button variant="contained"
-                    size="large"
+                        size="large"
                         className={style.landingButton}
-                        style={{ ...landingButtonStyle, backgroundColor: "black", color: "white" }}>
+                        style={{ ...landingButtonStyle, backgroundColor: "black", color: "white", }}>
                         Sign Up
                     </Button>
                 </div>
-
             </div>
-
         </div>
     )
 }
@@ -38,6 +36,9 @@ const landingButtonStyle: React.CSSProperties = {
     height: "7%",
     margin: "35px",
     fontFamily: "architect",
-    borderRadius: 0,
-    border: "1px solid black"
+    borderRadius: "95% 4% 92% 5%/4% 95% 6% 95%",
+    borderWidth: "3px 4px 3px 3px",
+    borderColor: "black",
+    borderStyle: "solid"
+    
 }

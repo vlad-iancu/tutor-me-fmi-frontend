@@ -35,4 +35,5 @@
 .landing-button {
     height: 32px;
     width: 128px;
+    transform: rotate(2deg);
 }
