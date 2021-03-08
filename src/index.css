@@ -1,13 +1,37 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body, html {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
+  @font-face {
+    font-family: "opensans_semibold";
+    src: local('opensans_semibold'), url("/src/assets/opensans/OpenSans-SemiBold.ttf") format('trueType');
+  }
+  
+  @font-face {
+    font-family: "opensans_regular";
+    src: local('opensans_regular'), url("/src/assets/opensans/OpenSans-Regular.ttf") format('trueType');
+  }
+  
+  @font-face {
+    font-family: "opensans_bold";
+    src: local('opensans_bold'), url("/src/assets/opensans/OpenSans-Bold.ttf") format('trueType');
+  }
+  @font-face {
+    font-family: "opensans_italic";
+    src: local('opensans_italic'), url("/src/assets/opensans/OpenSans-Italic.ttf") format('trueType');
+  }
+  @font-face {
+    font-family: "opensans_semibold_italic";
+    src: local('opensans_semibold_italic'), url("/src/assets/opensans/OpenSans-SemiBoldItalic.ttf") format('trueType');
+  }
+  @font-face {
+    font-family: "architect";
+    src: local("architect"), url("/src/assets/architects-daughter/ArchitectsDaughter-Regular.ttf") format('trueType')
+  }
