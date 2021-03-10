@@ -42,6 +42,8 @@ export default function Login() {
 
         </div>
     )
+    let { width, height, ...rest } = loginButtonStyle
+
 }
 
 const loginButtonStyle: React.CSSProperties = {
@@ -53,5 +55,6 @@ const loginButtonStyle: React.CSSProperties = {
     borderWidth: "3px 4px 3px 3px",
     borderColor: "black",
     borderStyle: "solid",
+    alignSelf: "flex-end"
 
 }
