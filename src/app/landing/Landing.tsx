@@ -2,11 +2,15 @@ import React from 'react'
 import style from './Landing.module.css'
 import splash from '../../assets/splash.jpg'
 import Button from '@material-ui/core/Button'
+import { useHistory } from 'react-router'
 interface LandingProps {
 
 }
 export default function Landing(props: LandingProps) {
-
+    let history = useHistory()
+    const navigate = (page: string) => {
+        history.push(page)
+    }
     return (
         <div className={style.container}>
             <img src={splash} width="100%" height="100%" className={style.splashImage} />
@@ -17,13 +21,15 @@ export default function Landing(props: LandingProps) {
                     <Button variant="contained"
                         size="large"
                         className={style.landingButton}
-                        style={{ ...landingButtonStyle, backgroundColor: "white", color: "black", borderColor: "black" }}>
+                        style={{ ...landingButtonStyle, backgroundColor: "white", color: "black", borderColor: "black" }}
+                        onClick={() => navigate("/login")}>
                         Sign In
                     </Button>
                     <Button variant="contained"
                         size="large"
                         className={style.landingButton}
-                        style={{ ...landingButtonStyle, backgroundColor: "black", color: "white", }}>
+                        style={{ ...landingButtonStyle, backgroundColor: "black", color: "white", }}
+                        /* onClick={() => navigate("/register")} */>
                         Sign Up
                     </Button>
                 </div>
@@ -40,5 +46,5 @@ const landingButtonStyle: React.CSSProperties = {
     borderWidth: "3px 4px 3px 3px",
     borderColor: "black",
     borderStyle: "solid"
-    
+
 }
