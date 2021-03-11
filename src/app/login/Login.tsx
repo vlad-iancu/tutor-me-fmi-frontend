@@ -22,7 +22,7 @@ export default function Login() {
             <div className={style.content}>
                 <h1 className={style.headerText}>Login</h1>
                 <input
-                    type="text"
+                    type="email"
                     className={style.field}
                     placeholder="Email"
                     onChange={({ target: { value } }) => { setEmail(value) }} />
@@ -33,7 +33,6 @@ export default function Login() {
                     onChange={({ target: { value } }) => { setPassword(value) }} />
                 <Button variant="contained"
                     size="large"
-                    className={style.landingButton}
                     style={{ ...loginButtonStyle, backgroundColor: "black", color: "white", borderColor: "black" }}
                     onClick={() => { login(); navigate("/home") }}>
                     Sign In
@@ -42,8 +41,6 @@ export default function Login() {
 
         </div>
     )
-    let { width, height, ...rest } = loginButtonStyle
-
 }
 
 const loginButtonStyle: React.CSSProperties = {
@@ -56,5 +53,4 @@ const loginButtonStyle: React.CSSProperties = {
     borderColor: "black",
     borderStyle: "solid",
     alignSelf: "flex-end"
-
 }
