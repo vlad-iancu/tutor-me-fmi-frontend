@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import style from './Login.module.css'
 import background from '../../assets/auth-background.jpg'
 import { useDispatch } from 'react-redux'
@@ -13,9 +13,17 @@ export default function Login() {
     const navigate = (page: string) => {
         history.push(page)
     }
-    const login = () => {
+    const login = useCallback(() => {
         dispatch(loginThunk({ email, password }))
-    }
+    }, [])
+    useEffect(() => {
+        const listener = (event: KeyboardEvent) => {
+            if (event.code === "Enter" || event.code === "NumpadEnter")
+                login()
+        }
+        document.addEventListener("keydown", listener)
+        return () => { document.removeEventListener("keydown", listener) }
+    }, [login])
     return (
         <div className={style.container}>
             <img src={background} width="100%" height="100%" />
@@ -34,7 +42,7 @@ export default function Login() {
                 <Button variant="contained"
                     size="large"
                     style={{ ...loginButtonStyle, backgroundColor: "black", color: "white", borderColor: "black" }}
-                    onClick={() => { login(); navigate("/home") }}>
+                    onClick={() => { login();  }}>
                     Sign In
                 </Button>
             </div>

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { RootState } from "../redux/store";
-import { AuthState, Credentials } from "./UserSlice";
+import { RootState } from "../../redux/store";
+import { AuthState } from "./UserSlice";
 
 type LoginCredentials = {
     email: string,

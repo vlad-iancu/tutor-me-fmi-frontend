@@ -1,12 +1,20 @@
 import Button from '@material-ui/core/Button'
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import style from './Register.module.css'
 import background from '../../assets/auth-background.jpg'
 export default function Register() {
     let [name, setName] = useState("")
     let [email, setEmail] = useState("")
     let [password, setPassword] = useState("")
-
+    const register = useCallback(() => { console.log("Register called") }, [])
+    useEffect(() => {
+        const listener = (event: KeyboardEvent) => {
+            if (event.code === "Enter" || event.code === "NumpadEnter")
+                register()
+        }
+        document.addEventListener("keydown", listener)
+        return () => { document.removeEventListener("keydown", listener) }
+    }, [register])
     return (
         <div className={style.container}>
             <img width="100%" height="100%" src={background} />
@@ -30,7 +38,7 @@ export default function Register() {
                     placeholder="Password"
                     value={password}
                     onChange={({ target: { value } }) => { setPassword(value) }} />
-                <Button style={{...registerButtonStyle, backgroundColor: "black", color: "white"}}>
+                <Button style={{ ...registerButtonStyle, backgroundColor: "black", color: "white" }}>
                     Sign Up
                 </Button>
             </div>

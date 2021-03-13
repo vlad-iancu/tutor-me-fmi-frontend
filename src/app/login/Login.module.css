@@ -22,6 +22,7 @@
     border-width: 3px;
     border-color: black;
     border-style: solid;
+    outline: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

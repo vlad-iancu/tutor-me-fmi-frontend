@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../redux/store";
 import { loginThunk } from "./LoginThunk";
 
 export type AuthState = {
