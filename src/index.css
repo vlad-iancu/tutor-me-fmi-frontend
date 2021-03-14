@@ -4,11 +4,11 @@ body, html {
     height: 100%;
     margin: 0;
 }
-#root {
+/* #root {
     width: 100%;
     height: 100%;
     margin: 0;
-}
+} */
   @font-face {
     font-family: "opensans_semibold";
     src: local('opensans_semibold'), url("/src/assets/opensans/OpenSans-SemiBold.ttf") format('trueType');
