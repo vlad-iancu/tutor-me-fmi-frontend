@@ -1,57 +1,52 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import style from './Login.module.css'
-import background from '../../assets/auth-background.jpg'
-import { useDispatch } from 'react-redux'
-import { loginThunk } from './LoginThunk'
 import Button from '@material-ui/core/Button'
-import { useHistory } from 'react-router'
-export default function Login() {
+import React, { useCallback, useEffect, useState } from 'react'
+import style from './Register.module.css'
+import background from '../../assets/auth-background.jpg'
+export default function Register() {
+    let [name, setName] = useState("")
     let [email, setEmail] = useState("")
     let [password, setPassword] = useState("")
-    let history = useHistory()
-    const dispatch = useDispatch()
-    const navigate = (page: string) => {
-        history.push(page)
-    }
-    const login = useCallback(() => {
-        dispatch(loginThunk({ email, password }))
-    }, [])
+    const register = useCallback(() => { console.log("Register called") }, [])
     useEffect(() => {
         const listener = (event: KeyboardEvent) => {
             if (event.code === "Enter" || event.code === "NumpadEnter")
-                login()
+                register()
         }
         document.addEventListener("keydown", listener)
         return () => { document.removeEventListener("keydown", listener) }
-    }, [login])
+    }, [register])
     return (
         <div className={style.container}>
-            <img src={background} width="100%" height="100%" />
+            <img width="100%" height="100%" src={background} />
             <div className={style.content}>
-                <h1 className={style.headerText}>Login</h1>
+                <h1 className={style.headerText}>Register</h1>
                 <input
-                    type="email"
                     className={style.field}
+                    type="text"
+                    placeholder="Name"
+                    value={name}
+                    onChange={({ target: { value } }) => { setName(value) }} />
+                <input
+                    className={style.field}
+                    type="email"
                     placeholder="Email"
+                    value={email}
                     onChange={({ target: { value } }) => { setEmail(value) }} />
                 <input
-                    type="password"
                     className={style.field}
+                    type="password"
                     placeholder="Password"
+                    value={password}
                     onChange={({ target: { value } }) => { setPassword(value) }} />
-                <Button variant="contained"
-                    size="large"
-                    style={{ ...loginButtonStyle, backgroundColor: "black", color: "white", borderColor: "black" }}
-                    onClick={() => { login();  }}>
-                    Sign In
+                <Button style={{ ...registerButtonStyle, backgroundColor: "black", color: "white" }}>
+                    Sign Up
                 </Button>
             </div>
-
         </div>
     )
 }
 
-const loginButtonStyle: React.CSSProperties = {
+const registerButtonStyle: React.CSSProperties = {
     width: "70%",
     height: "7%",
     margin: "35px",

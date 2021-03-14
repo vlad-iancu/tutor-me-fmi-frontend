@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../redux/store";
 import { loginThunk } from "./LoginThunk";
 
 export type AuthState = {
@@ -27,7 +26,7 @@ const userSlice = createSlice({
         }
     },
     extraReducers: builder => {
-        builder.addCase(loginThunk.fulfilled, (state, {payload}) => {
+        builder.addCase(loginThunk.fulfilled, (state, { payload }) => {
             console.log("We have the reducer called")
             Object.assign(state, payload)
         })
@@ -35,5 +34,5 @@ const userSlice = createSlice({
 
 })
 
-export const {changeToken, updateCredentials, updateAuthData} = userSlice.actions
+export const { changeToken, updateCredentials, updateAuthData } = userSlice.actions
 export default userSlice.reducer

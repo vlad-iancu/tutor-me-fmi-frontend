@@ -29,7 +29,7 @@ export default function Landing(props: LandingProps) {
                         size="large"
                         className={style.landingButton}
                         style={{ ...landingButtonStyle, backgroundColor: "black", color: "white", }}
-                        /* onClick={() => navigate("/register")} */>
+                        onClick={() => navigate("/register")}>
                         Sign Up
                     </Button>
                 </div>
