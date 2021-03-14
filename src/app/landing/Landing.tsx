@@ -38,7 +38,7 @@ export default function Landing(props: LandingProps) {
     )
 }
 const landingButtonStyle: React.CSSProperties = {
-    width: "20%",
+    width: "30%",
     height: "7%",
     margin: "35px",
     fontFamily: "architect",
